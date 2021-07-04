@@ -1,6 +1,18 @@
 <template>
   <div>
-    <div v-for="info in bookInfo" :key="info.id">{{ info }}</div>
+    <div v-for="info in bookInfo" :key="info.id">
+      <h3>{{ info.title }}</h3>
+      <img
+        :src="info.thumbnail"
+        onerror="this.src='https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png'"
+      />
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
   </div>
 </template>
 
@@ -22,10 +34,12 @@ export default {
         },
       })
       .then((res) => {
-        this.bookInfo = res.data.documents[0];
+        this.bookInfo = res.data.documents;
+        console.log(this.bookInfo);
       })
       .catch();
   },
+  mounted: {},
 };
 </script>
 
