@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div v-for="info in bookInfo" :key="info.id">
+    <div class="book_Info" v-for="info in bookInfo" :key="info.id">
       <h3>{{ info.title }}</h3>
-      <img
+      <img :src="info.thumbnail" @error="no_image" />
+      <!-- <img
         :src="info.thumbnail"
         onerror="this.src='https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png'"
-      />
-
+      /> -->
       <br />
       <br />
       <br />
@@ -39,7 +39,12 @@ export default {
       })
       .catch();
   },
-  mounted: {},
+  methods: {
+    no_image(e) {
+      e.target.src =
+        "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png";
+    },
+  },
 };
 </script>
 
