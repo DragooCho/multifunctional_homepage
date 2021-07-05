@@ -1,15 +1,26 @@
 <template>
   <div>
     <div class="book_Info" v-for="info in bookInfo" :key="info.id">
-      <img :src="info.thumbnail" @error="no_image" />
+      <a v-bind:href="info.url">
+        <img :src="info.thumbnail" @error="no_image" />
+      </a>
       <div class="container">
-        <h3>{{ info.title }}</h3>
-        <a>{{
-          info.contents === "" ? noInfo : info.contents.slice(0, 200) + "..."
-        }}</a>
-        <p>정가: {{ info.price }} 원</p>
-        <p v-if="info.sale_price === -1">할인가: {{ no_sale_price }}</p>
-        <p v-else>할인가: {{ info.sale_price }} 원</p>
+        <h3>
+          <a class="linkUrl" v-bind:href="info.url">
+            {{ info.title }}
+          </a>
+        </h3>
+        <h4>
+          <a class="grayText">출판</a>
+          <a class="brueText">{{ info.publisher }}</a>
+        </h4>
+        <p v-if="info.contents === ''">{{ noInfo }}</p>
+        <p v-else>
+          {{ info.contents.slice(0, 200) + "..." }}
+        </p>
+        <p>정가 {{ info.price }} 원</p>
+        <p v-if="info.sale_price === -1">할인가 {{ no_sale_price }}</p>
+        <p v-else>할인가 {{ info.sale_price }} 원</p>
       </div>
     </div>
   </div>
@@ -38,7 +49,7 @@ export default {
       })
       .then((res) => {
         this.bookInfo = res.data.documents;
-        console.log(this.bookInfo[9]);
+        console.log(this.bookInfo[0]);
       })
       .catch((error) => {
         console.log(error);
@@ -65,7 +76,6 @@ export default {
   margin: 2rem 5rem;
   border-bottom: 1px solid #bdc3c7;
   align-items: center;
-  /* flex-direction: column; */
 }
 
 .book_Info img {
@@ -77,7 +87,20 @@ export default {
   margin-left: 3rem;
 }
 
-.book_Info .container a {
-  width: 50%;
+.book_Info .container h4 {
+  color: #bdc3c7;
+}
+
+.brueText {
+  margin-left: 0.5rem;
+  color: #2980b9;
+}
+
+.container .linkUrl {
+  color: #2c3e50;
+  text-decoration: none;
+}
+.grayText {
+  color: #bdc3c7;
 }
 </style>
