@@ -40,9 +40,11 @@ npm install
 
 ```
 VUE_APP_KAKAOAK_KEY=<카카오 REST API 키>
+
 ```
 
-- 여기서 `<카카오 REST API 키>`는 예로 들자면 "qwer12345" 이런식으로 입력하는 부분입니다.
+- 카카오 REST API 키는 [Kakao Developers 홈페이지](https://developers.kakao.com/)에서 구할 수 있습니다.  
+  여기서 `<카카오 REST API 키>`는 예로 들자면 "qwer12345" 이런식으로 입력하는 부분입니다.
 
 <br />
 
