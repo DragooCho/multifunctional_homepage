@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="book_Info" v-for="info in bookInfo" :key="info.id">
-      <a v-bind:href="info.url">
+      <a v-bind:href="info.url" class="hoverUnderline">
         <img :src="info.thumbnail" @error="no_image" />
       </a>
       <div class="container">
@@ -18,9 +18,11 @@
         <p v-else>
           {{ info.contents.slice(0, 200) + "..." }}
         </p>
-        <p>정가 {{ info.price }} 원</p>
-        <p v-if="info.sale_price === -1">할인가 {{ no_sale_price }}</p>
-        <p v-else>할인가 {{ info.sale_price }} 원</p>
+        <p><a class="grayText">정가</a> {{ info.price }} 원</p>
+        <p v-if="info.sale_price === -1">
+          <a class="grayText">할인가</a> {{ no_sale_price }}
+        </p>
+        <p v-else><a class="grayText">할인가</a> {{ info.sale_price }} 원</p>
       </div>
     </div>
   </div>
@@ -73,14 +75,23 @@ export default {
 }
 .book_Info {
   display: flex;
-  margin: 2rem 5rem;
+  margin: 0rem 7rem 1rem 7rem;
   border-bottom: 1px solid #bdc3c7;
   align-items: center;
 }
 
 .book_Info img {
+  border: 1px solid #34495e;
   width: 120px;
   height: 174px;
+}
+.book_Info img:hover {
+  animation: fadeIn 1s infinite alternate;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
 }
 
 .book_Info .container {
@@ -96,11 +107,16 @@ export default {
   color: #2980b9;
 }
 
+.container .linkUrl:hover {
+  color: #2c3ecc;
+  text-decoration: underline;
+}
+
 .container .linkUrl {
   color: #2c3e50;
   text-decoration: none;
 }
 .grayText {
-  color: #bdc3c7;
+  color: #7f8c8d;
 }
 </style>

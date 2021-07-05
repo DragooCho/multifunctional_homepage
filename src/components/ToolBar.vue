@@ -6,12 +6,12 @@
   </div>
 </template>
 
-<style scoped>
+<style>
 .header {
   color: white;
   background-color: #badc58;
   display: flex;
-  padding: 10px;
+  padding: 0.5rem;
 }
 .header .router-link-exact-active {
   color: #30336b;
