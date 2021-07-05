@@ -87,10 +87,11 @@ export default {
 }
 .book_Info img:hover {
   animation: fadeIn 1s infinite alternate;
+  border: 1px solid #c0392b;
 }
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0.5;
   }
 }
 
