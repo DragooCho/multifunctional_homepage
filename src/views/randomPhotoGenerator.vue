@@ -1,6 +1,6 @@
 <template>
   <div>
-    random photo generator
+    준비 중입니다.
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="header">
-    <router-link to="/book">📘추천하는 책 목록📚</router-link> |
+    <router-link to="/book">📘추천하는 베스트셀러 목록📚</router-link> |
     <router-link to="/editor">📸이미지 텍스트 에디터🎬</router-link> |
     <router-link to="/generator">🐶무작위동물사진생성기😸</router-link>
   </div>

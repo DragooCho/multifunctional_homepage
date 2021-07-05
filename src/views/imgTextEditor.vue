@@ -1,6 +1,6 @@
 <template>
   <div>
-    imgEditor
+    준비 중입니다.
   </div>
 </template>
 
