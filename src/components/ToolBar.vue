@@ -1,8 +1,16 @@
 <template>
   <div class="header">
-    <router-link to="/book">📘추천하는 베스트셀러 목록📚</router-link> |
-    <router-link to="/editor">📸이미지 텍스트 에디터🎬</router-link> |
-    <router-link to="/generator">🐶무작위동물사진생성기😸</router-link>
+    <router-link class="focus" to="/book"
+      >📘추천하는 베스트셀러 목록📚</router-link
+    >
+    |
+    <router-link class="focus" to="/editor"
+      >📸이미지 텍스트 에디터🎬</router-link
+    >
+    |
+    <router-link class="focus" to="/generator"
+      >🐶무작위동물사진생성기😸</router-link
+    >
   </div>
 </template>
 
@@ -15,10 +23,12 @@
 }
 .header .router-link-exact-active {
   color: #30336b;
-  text-decoration: underline;
 }
 .header a {
-  color: white;
+  color: #7f8ecf;
   text-decoration: none;
+}
+.header .focus:hover {
+  text-decoration: underline;
 }
 </style>

@@ -29,9 +29,7 @@
 </template>
 
 <script>
-import axios from "axios";
-
-const bookSize = 10;
+import { fetchBookinfo } from "../api/index.js";
 
 export default {
   data() {
@@ -42,13 +40,7 @@ export default {
     };
   },
   created() {
-    axios
-      .get("https://dapi.kakao.com/v3/search/book?target=title", {
-        params: { query: "베스트셀러", size: bookSize },
-        headers: {
-          Authorization: `KakaoAK ${process.env.VUE_APP_KAKAOAK_KEY}`,
-        },
-      })
+    fetchBookinfo()
       .then((res) => {
         this.bookInfo = res.data.documents;
         console.log(this.bookInfo[0]);
