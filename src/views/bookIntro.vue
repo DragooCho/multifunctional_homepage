@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import { fetchBookinfo } from "../api/index.js";
+import { fetchBookinfo, config } from "../api/index.js";
 
 export default {
   data() {
@@ -52,8 +52,7 @@ export default {
   mounted() {},
   methods: {
     no_image(e) {
-      e.target.src =
-        "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png";
+      e.target.src = config.noImageUrl;
     },
   },
 };
