@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="book_Info" v-for="info in bookInfo" :key="info.id">
+    <div
+      class="book_Info"
+      v-for="info in this.$store.state.bookInfo"
+      :key="info.id"
+    >
       <a v-bind:href="info.url" class="hoverUnderline">
         <img :src="info.thumbnail" @error="no_image" />
       </a>
@@ -29,30 +33,31 @@
 </template>
 
 <script>
-import { fetchBookinfo, config } from "../api/index.js";
+// import { config } from "../api/index.js";
 
 export default {
   data() {
     return {
-      bookInfo: [],
       noInfo: "책의 정보를 찾을 수 없습니다.",
       no_sale_price: "현재 할인 예정이 없습니다.",
     };
   },
   created() {
-    fetchBookinfo()
-      .then((res) => {
-        this.bookInfo = res.data.documents;
-        console.log(this.bookInfo[0]);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.$store.dispatch("FETCH_BOOK_INFO");
+    // fetchBookinfo()
+    //   .then((res) => {
+    //     this.bookInfo = res.data.documents;
+    //     console.log(this.bookInfo[0]);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   },
   mounted() {},
   methods: {
     no_image(e) {
-      e.target.src = config.noImageUrl;
+      e.target.src =
+        "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png";
     },
   },
 };

@@ -2,8 +2,8 @@ import axios from "axios";
 
 const config = {
   baseUrl: "https://dapi.kakao.com/v3/",
-  noImageUrl:
-    "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png",
+  // noImageUrl:
+  //   "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png",
   bookSize: 10,
 };
 
