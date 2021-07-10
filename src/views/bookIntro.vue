@@ -8,21 +8,29 @@
       <a v-bind:href="info.url" class="hoverUnderline">
         <img :src="info.thumbnail" @error="no_image" />
       </a>
-      <div class="container">
+      <div class="BookInfo container">
         <h3>
           <a class="linkUrl" v-bind:href="info.url">
             {{ info.title }}
           </a>
         </h3>
+
         <h4>
           <a class="grayText">출판</a>
           <a class="brueText">{{ info.publisher }}</a>
         </h4>
-        <p v-if="info.contents === ''">{{ noInfo }}</p>
-        <p v-else>
-          {{ info.contents.slice(0, 200) + "..." }}
-        </p>
+
+        <h4><a class="grayText">책소개</a></h4>
+        <div class="contentsText">
+          <p v-if="info.contents === ''">{{ noInfo }}</p>
+          <p v-else-if="info.contents.length > 200">
+            {{ info.contents.slice(0, 200) + "..." }}
+          </p>
+          <p v-else>{{ info.contents }}</p>
+        </div>
+
         <p><a class="grayText">정가</a> {{ info.price }} 원</p>
+
         <p v-if="info.sale_price === -1">
           <a class="grayText">할인가</a> {{ no_sale_price }}
         </p>
@@ -33,7 +41,7 @@
 </template>
 
 <script>
-// import { config } from "../api/index.js";
+import { imageUrl } from "../images/image_url.js";
 
 export default {
   data() {
@@ -56,8 +64,7 @@ export default {
   mounted() {},
   methods: {
     no_image(e) {
-      e.target.src =
-        "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png";
+      e.target.src = imageUrl.isNoImage;
     },
   },
 };
@@ -97,6 +104,11 @@ export default {
 
 .book_Info .container h4 {
   color: #bdc3c7;
+}
+
+.contentsText {
+  position: relative;
+  top: -0.8rem;
 }
 
 .brueText {
