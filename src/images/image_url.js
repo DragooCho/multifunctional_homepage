@@ -3,4 +3,8 @@ const imageUrl = {
     "https://raw.githubusercontent.com/DragooCho/TIL/main/image/test_thumbnail.png",
 };
 
-export { imageUrl };
+const test = () => {
+  return "test_text";
+};
+
+export { imageUrl, test };

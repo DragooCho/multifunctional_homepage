@@ -52,14 +52,6 @@ export default {
   },
   created() {
     this.$store.dispatch("FETCH_BOOK_INFO");
-    // fetchBookinfo()
-    //   .then((res) => {
-    //     this.bookInfo = res.data.documents;
-    //     console.log(this.bookInfo[0]);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
   },
   mounted() {},
   methods: {
