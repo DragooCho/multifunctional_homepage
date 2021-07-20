@@ -9,9 +9,6 @@
         고양이 사진 생성버튼
       </button>
     </div>
-    <!-- <div class="image_posted" v-for="Imgs in catImgs" :key="Imgs.id">
-      <img :src="`${Imgs}`" />
-    </div> -->
     <img
       class="image_posted"
       v-for="Img in catImgs"
@@ -40,9 +37,7 @@ export default {
     createdCatImg() {
       fetchCatsInfo()
         .then((res) => {
-          // console.log(res.data.file);
           let image = res.data.file;
-          console.log(image);
           this.Img = image;
           this.catImgs.push(this.Img);
           window.scrollBy(0, 1500);
@@ -59,6 +54,11 @@ export default {
 .button_container {
   position: fixed;
   z-index: 1;
+}
+.button_container button {
+  width: 17rem;
+  height: 5rem;
+  font-size: 1.5rem;
 }
 .image_posted {
   position: relative;
