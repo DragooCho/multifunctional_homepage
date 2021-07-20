@@ -25,8 +25,10 @@ import { fetchCatsInfo } from "../api/index.js";
 export default {
   data() {
     return {
-      Img: "https://purr.objects-us-east-1.dream.io/i/img_20170904_234535.jpg",
+      Img: "test",
       catImgs: [],
+      msg: "test",
+      msgs: [],
     };
   },
   created() {
@@ -37,9 +39,9 @@ export default {
     createdCatImg() {
       fetchCatsInfo()
         .then((res) => {
-          let image = res.data.file;
-          this.Img = image;
+          this.Img = res.data.file;
           this.catImgs.push(this.Img);
+
           window.scrollBy(0, 1500);
         })
         .catch((error) => {
@@ -65,5 +67,8 @@ export default {
   top: 100px;
   width: 300px;
   z-index: 0;
+}
+.image_test {
+  width: 300px;
 }
 </style>
