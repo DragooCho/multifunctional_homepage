@@ -9,9 +9,16 @@
         고양이 사진 생성버튼
       </button>
     </div>
-    <div class="image_posted" v-for="Img in catImgs" :key="Img.id">
-      {{ Img }}
-    </div>
+    <!-- <div class="image_posted" v-for="Imgs in catImgs" :key="Imgs.id">
+      <img :src="`${Imgs}`" />
+    </div> -->
+    <img
+      class="image_posted"
+      v-for="Img in catImgs"
+      :key="Img.id"
+      :src="`${Img}`"
+      alt="귀여운 고양이 사진"
+    />
   </div>
 </template>
 
@@ -21,7 +28,7 @@ import { fetchCatsInfo } from "../api/index.js";
 export default {
   data() {
     return {
-      Imgs: "image",
+      Img: "https://purr.objects-us-east-1.dream.io/i/img_20170904_234535.jpg",
       catImgs: [],
     };
   },
@@ -34,11 +41,11 @@ export default {
       fetchCatsInfo()
         .then((res) => {
           // console.log(res.data.file);
-          let image = new Image(300);
-          image.src = res.data.file;
+          let image = res.data.file;
           console.log(image);
-          // this.catImgs = image;
-          this.catImgs.push(this.Imgs);
+          this.Img = image;
+          this.catImgs.push(this.Img);
+          window.scrollBy(0, 1500);
         })
         .catch((error) => {
           console.log(error);
@@ -48,4 +55,15 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.button_container {
+  position: fixed;
+  z-index: 1;
+}
+.image_posted {
+  position: relative;
+  top: 100px;
+  width: 300px;
+  z-index: 0;
+}
+</style>

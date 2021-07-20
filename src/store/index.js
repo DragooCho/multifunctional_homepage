@@ -7,7 +7,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     bookInfo: [],
-    catImgUrl: "",
+    catImgUrl: [],
   },
   mutations: {
     SET_BOOK_INFO(state, bookInfo) {
