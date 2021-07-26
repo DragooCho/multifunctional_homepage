@@ -1,8 +1,10 @@
 <template>
   <div>
     <div class="button_container">
-      <button class="randomDog btnStyle">개 사진 생성버튼</button>
-      <button class="randomFox btnStyle">
+      <button class="randomDog btnStyle" @click="createdDogImg">
+        개 사진 생성버튼
+      </button>
+      <button class="randomFox btnStyle" @click="createdFoxImg">
         여우 사진 생성버튼
       </button>
       <button class="randomCat btnStyle" @click="createdCatImg">
@@ -11,24 +13,48 @@
     </div>
     <img
       class="image_posted"
+      v-for="Img in dogImgs"
+      :key="Img.id"
+      :src="`${Img}`"
+      alt="귀여운 개 사진"
+    />
+    <video
+      class="image_posted"
+      v-for="Img in dogVideos"
+      :key="Img.id"
+      :src="`${Img}`"
+      autoplay="true"
+      loop="true"
+      alt="귀여운 개 영상"
+    ></video>
+    <img
+      class="image_posted"
       v-for="Img in catImgs"
       :key="Img.id"
       :src="`${Img}`"
       alt="귀여운 고양이 사진"
     />
+    <img
+      class="image_posted"
+      v-for="Img in foxImgs"
+      :key="Img.id"
+      :src="`${Img}`"
+      alt="귀여운 여우 사진"
+    />
   </div>
 </template>
 
 <script>
-import { fetchCatsInfo } from "../api/index.js";
+import { fetchCatsInfo, fetchDogsInfo, fetchFoxsInfo } from "../api/index.js";
 
 export default {
   data() {
     return {
       Img: "test",
       catImgs: [],
-      msg: "test",
-      msgs: [],
+      dogImgs: [],
+      dogVideos: [],
+      foxImgs: [],
     };
   },
   created() {
@@ -47,6 +73,43 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+    },
+    createdDogImg() {
+      fetchDogsInfo()
+        .then((res) => {
+          const Ex = res.data.url;
+          let fileNameEx = this.urlParseEx(Ex);
+          console.log(fileNameEx);
+          this.Img = res.data.url;
+          if (fileNameEx === "mp4" || fileNameEx === "webm") {
+            this.dogVideos.push(this.Img);
+          } else {
+            this.dogImgs.push(this.Img);
+          }
+
+          window.scrollBy(0, 1500);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    createdFoxImg() {
+      fetchFoxsInfo()
+        .then((res) => {
+          // console.log(res.data.image);
+          this.Img = res.data.image;
+          this.foxImgs.push(this.Img);
+
+          window.scrollBy(0, 1500);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
+    urlParseEx(img) {
+      const parseUrl = img.split(".");
+      const nameExValue = parseUrl[parseUrl.length - 1];
+      return nameExValue;
     },
   },
 };

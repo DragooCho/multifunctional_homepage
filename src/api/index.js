@@ -22,5 +22,12 @@ function fetchBookinfo() {
 function fetchCatsInfo() {
   return axios.get(`${config.animals.catUrl}`);
 }
+function fetchDogsInfo() {
+  return axios.get(`${config.animals.dogUrl}`);
+}
+function fetchFoxsInfo() {
+  return axios.get(`${config.animals.foxUrl}`);
+}
 
-export { fetchBookinfo, fetchCatsInfo, config };
+// export { fetchBookinfo, fetchCatsInfo, config };
+export { fetchBookinfo, fetchCatsInfo, fetchDogsInfo, fetchFoxsInfo, config };
