@@ -13,10 +13,10 @@
     </div>
     <img
       class="image_posted"
-      v-for="Img in dogImgs"
+      v-for="Img in animalImgs"
       :key="Img.id"
       :src="`${Img}`"
-      alt="귀여운 개 사진"
+      alt="귀여운 동물 사진"
     />
     <video
       class="image_posted"
@@ -27,20 +27,6 @@
       loop="true"
       alt="귀여운 개 영상"
     ></video>
-    <img
-      class="image_posted"
-      v-for="Img in catImgs"
-      :key="Img.id"
-      :src="`${Img}`"
-      alt="귀여운 고양이 사진"
-    />
-    <img
-      class="image_posted"
-      v-for="Img in foxImgs"
-      :key="Img.id"
-      :src="`${Img}`"
-      alt="귀여운 여우 사진"
-    />
   </div>
 </template>
 
@@ -51,10 +37,8 @@ export default {
   data() {
     return {
       Img: "test",
-      catImgs: [],
-      dogImgs: [],
+      animalImgs: [],
       dogVideos: [],
-      foxImgs: [],
     };
   },
   created() {
@@ -66,7 +50,7 @@ export default {
       fetchCatsInfo()
         .then((res) => {
           this.Img = res.data.file;
-          this.catImgs.push(this.Img);
+          this.animalImgs.push(this.Img);
 
           window.scrollBy(0, 1500);
         })
@@ -84,7 +68,7 @@ export default {
           if (fileNameEx === "mp4" || fileNameEx === "webm") {
             this.dogVideos.push(this.Img);
           } else {
-            this.dogImgs.push(this.Img);
+            this.animalImgs.push(this.Img);
           }
 
           window.scrollBy(0, 1500);
@@ -98,7 +82,7 @@ export default {
         .then((res) => {
           // console.log(res.data.image);
           this.Img = res.data.image;
-          this.foxImgs.push(this.Img);
+          this.animalImgs.push(this.Img);
 
           window.scrollBy(0, 1500);
         })
