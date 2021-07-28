@@ -6,7 +6,8 @@
       :key="info.id"
     >
       <a v-bind:href="info.url" class="hoverUnderline">
-        <img :src="info.thumbnail" @error="no_image" />
+        <img v-if="info.thumbnail === ''" :src="no_thumbnail_Image" />
+        <img v-else :src="info.thumbnail" />
       </a>
       <div class="BookInfo container">
         <h3>
@@ -41,24 +42,21 @@
 </template>
 
 <script>
-import { imageUrl } from "../images/image_url.js";
+import { noImage } from "../images/image_url.js";
+import { currentDate } from "../function_utilities/time_utilities";
 
 export default {
   data() {
     return {
-      noInfo: "책의 정보를 찾을 수 없습니다.",
-      no_sale_price: "현재 할인 예정이 없습니다.",
+      noInfo: `${currentDate()} 현재 책의 정보를 찾을 수 없습니다.`,
+      no_sale_price: `${currentDate()} 현재 할인 예정이 없습니다.`,
+      no_thumbnail_Image: `${noImage()}`,
     };
   },
   created() {
     this.$store.dispatch("FETCH_BOOK_INFO");
   },
   mounted() {},
-  methods: {
-    no_image(e) {
-      e.target.src = imageUrl.isNoImage;
-    },
-  },
 };
 </script>
 

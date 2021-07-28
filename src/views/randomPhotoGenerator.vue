@@ -55,7 +55,7 @@ export default {
           window.scrollBy(0, 1500);
         })
         .catch((error) => {
-          console.log(error);
+          console.log(error, "에러");
         });
     },
     createdDogImg() {

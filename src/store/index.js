@@ -22,6 +22,7 @@ export const store = new Vuex.Store({
       fetchBookinfo()
         .then((res) => {
           context.commit("SET_BOOK_INFO", res.data.documents);
+          console.log(res.data.documents);
         })
         .catch((error) => {
           console.log(error);
