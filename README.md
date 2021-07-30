@@ -17,12 +17,50 @@
 
 - **Vue.js 2.6.11**
 
+#### `Back-end API`
+
+- 카카오 API(책검색) https://developers.kakao.com/docs/latest/ko/daum-search/dev-guide#search-book
+- RandomCat https://github.com/dl0312/open-apis-korea#%EB%8F%99%EB%AC%BC
+- RandomDog https://github.com/dl0312/open-apis-korea#%EB%8F%99%EB%AC%BC
+- RandomFox https://github.com/dl0312/open-apis-korea#%EB%8F%99%EB%AC%BC
+
 <br />
 
-## 3. 앞으로 추가할 서비스 📐
+## 3. 완성된 웹 페이지 소개
 
-- 목표로하는 서비스는 책소개 페이지, 이미지텍스트에디터, 무작위동물사진생성기 입니다.  
-  이전에 순수 JS로 개발 했었던 것도 있고 이 기능들을 Vue.js에서도 동작하게 만드는걸 우선으로 하고 있습니다.
+<br />
+
+### `📘추천하는 베스트셀러 목록📚`
+
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_024.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+
+- 카카오 API에서 응답 받은 데이터를 활용해 특정 키워드의 책을 소개하는 웹페이지입니다.
+
+<br />
+
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_026.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+
+- 웹반응형을 적용해 페이지 가로 폭이 700px이하로 줄어들면 모바일의 가독성에 맞게 변화됩니다.
+
+<br /><br />
+
+### `🐶무작위동물사진생성기😸`
+
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_027.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="무작위동물사진"></img>
+
+- 보고싶은 동물의 버튼을 누르면 API에게 요청하고 이미지웹주소를 응답받아  
+  이미지겍체에 대입되어 동물이미지가 브라우저에 출력되는 웹페이지입니다.
+
+- 보통은 img 테그노드가 차례대로 생성되지만 video테그노드가  
+  항상 코드 아랫줄에 우선적으로 생성되는 현상이 있어서 개선할 예정입니다.
+
+<br />
+
+## 4. 앞으로 추가할 서비스 📐
+
+- 현재 완성된 서비스는 책소개 페이지, 무작위동물사진생성기 입니다.  
+  이미지텍스트에디터는 업데이트 예정입니다.
+- 그 외에도 쓸 만한 페이지를 기획 중 입니다.
 
 <br />
 
