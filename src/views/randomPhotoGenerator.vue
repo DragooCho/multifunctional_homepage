@@ -32,6 +32,8 @@
 
 <script>
 import { fetchCatsInfo, fetchDogsInfo, fetchFoxsInfo } from "../api/index.js";
+import { clickedWindowScroll } from "../function_utilities/window_scroll_event";
+import { urlParseEx } from "../function_utilities/string_processing_utilities";
 
 export default {
   data() {
@@ -52,7 +54,7 @@ export default {
           this.Img = res.data.file;
           this.animalImgs.push(this.Img);
 
-          window.scrollBy(0, 1500);
+          clickedWindowScroll(0, 1500);
         })
         .catch((error) => {
           console.log(error, "에러");
@@ -62,16 +64,17 @@ export default {
       fetchDogsInfo()
         .then((res) => {
           const Ex = res.data.url;
-          let fileNameEx = this.urlParseEx(Ex);
+          let fileNameEx = urlParseEx(Ex);
           console.log(fileNameEx);
           this.Img = res.data.url;
+
           if (fileNameEx === "mp4" || fileNameEx === "webm") {
             this.dogVideos.push(this.Img);
           } else {
             this.animalImgs.push(this.Img);
           }
 
-          window.scrollBy(0, 1500);
+          clickedWindowScroll(0, 1500);
         })
         .catch((error) => {
           console.log(error);
@@ -80,20 +83,14 @@ export default {
     createdFoxImg() {
       fetchFoxsInfo()
         .then((res) => {
-          // console.log(res.data.image);
           this.Img = res.data.image;
           this.animalImgs.push(this.Img);
 
-          window.scrollBy(0, 1500);
+          clickedWindowScroll(0, 1500);
         })
         .catch((error) => {
           console.log(error);
         });
-    },
-    urlParseEx(img) {
-      const parseUrl = img.split(".");
-      const nameExValue = parseUrl[parseUrl.length - 1];
-      return nameExValue;
     },
   },
 };
