@@ -7,12 +7,12 @@ const config = {
     dogUrl: "https://random.dog/woof.json",
     foxUrl: "https://randomfox.ca/floof/",
   },
-  bookIndexLength: 20,
+  bookIndexLength: 30,
 };
 
 function fetchBookinfo() {
   return axios.get(`${config.baseUrl}search/book?target=title`, {
-    params: { query: "javascript", size: config.bookIndexLength },
+    params: { query: "자바스크립트", size: config.bookIndexLength },
     headers: {
       Authorization: `KakaoAK ${process.env.VUE_APP_KAKAOAK_KEY}`,
     },
