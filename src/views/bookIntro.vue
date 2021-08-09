@@ -30,12 +30,19 @@
           <p v-else>{{ info.contents }}</p>
         </div>
 
-        <p><a class="grayText">정가</a> {{ info.price }} 원</p>
+        <p>
+          <a class="grayText">정가</a>
+          {{ digitCommaNumber(info.price) }} 원
+        </p>
 
         <p v-if="info.sale_price === -1">
-          <a class="grayText">할인가</a> {{ no_sale_price }}
+          <a class="grayText">할인가</a>
+          {{ no_sale_price }}
         </p>
-        <p v-else><a class="grayText">할인가</a> {{ info.sale_price }} 원</p>
+        <p v-else>
+          <a class="grayText">할인가</a>
+          {{ digitCommaNumber(info.sale_price) }} 원
+        </p>
       </div>
     </div>
   </div>
@@ -44,6 +51,7 @@
 <script>
 import { noImage } from "../images/image_url.js";
 import { currentDate } from "../function_utilities/time_utilities";
+import { digitCommaNumber } from "../function_utilities/number_processing_utilities";
 
 export default {
   data() {
@@ -51,6 +59,7 @@ export default {
       noInfo: `${currentDate()} 현재 책의 정보를 찾을 수 없습니다.`,
       no_sale_price: `${currentDate()} 현재 할인 예정이 없습니다.`,
       no_thumbnail_Image: `${noImage()}`,
+      digitCommaNumber,
     };
   },
   created() {

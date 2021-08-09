@@ -1,8 +1,6 @@
 <template>
   <div class="header">
-    <router-link class="focus" to="/book"
-      >📘추천하는 베스트셀러 목록📚</router-link
-    >
+    <router-link class="focus" to="/book">📘자바스크립트 서적📚</router-link>
     |
     <router-link class="focus" to="/editor"
       >📸이미지 텍스트 에디터🎬</router-link

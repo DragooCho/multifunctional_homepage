@@ -12,7 +12,7 @@ const config = {
 
 function fetchBookinfo() {
   return axios.get(`${config.baseUrl}search/book?target=title`, {
-    params: { query: "베스트셀러", size: config.bookIndexLength },
+    params: { query: "javascript", size: config.bookIndexLength },
     headers: {
       Authorization: `KakaoAK ${process.env.VUE_APP_KAKAOAK_KEY}`,
     },
