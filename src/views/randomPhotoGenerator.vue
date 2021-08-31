@@ -48,49 +48,61 @@ export default {
   },
   mounted() {},
   methods: {
-    createdCatImg() {
-      fetchCatsInfo()
-        .then((res) => {
-          this.Img = res.data.file;
-          this.animalImgs.push(this.Img);
+    // createdCatImg() {
+    //   fetchCatsInfo()
+    //     .then((res) => {
+    //       this.Img = res.data.file;
+    //       this.animalImgs.push(this.Img);
 
-          clickedWindowScroll(0, 1500);
-        })
-        .catch((error) => {
-          console.log(error, "에러");
-        });
+    //       clickedWindowScroll(0, 1500);
+    //     })
+    //     .catch((error) => {
+    //       console.log(error, "에러");
+    //     });
+    // },
+    async createdCatImg() {
+      try {
+        const res = await fetchCatsInfo();
+
+        this.Img = res.data.file;
+        this.animalImgs.push(this.Img);
+
+        clickedWindowScroll(0, 1500);
+      } catch (error) {
+        console.log(error, "에러");
+      }
     },
-    createdDogImg() {
-      fetchDogsInfo()
-        .then((res) => {
-          const Ex = res.data.url;
-          let fileNameEx = urlParseEx(Ex);
-          console.log(fileNameEx);
-          this.Img = res.data.url;
+    async createdDogImg() {
+      try {
+        const res = await fetchDogsInfo();
 
-          if (fileNameEx === "mp4" || fileNameEx === "webm") {
-            this.dogVideos.push(this.Img);
-          } else {
-            this.animalImgs.push(this.Img);
-          }
+        const Ex = res.data.url;
+        let fileNameEx = urlParseEx(Ex);
+        console.log(fileNameEx);
+        this.Img = res.data.url;
 
-          clickedWindowScroll(0, 1500);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-    createdFoxImg() {
-      fetchFoxsInfo()
-        .then((res) => {
-          this.Img = res.data.image;
+        if (fileNameEx === "mp4" || fileNameEx === "webm") {
+          this.dogVideos.push(this.Img);
+        } else {
           this.animalImgs.push(this.Img);
+        }
 
-          clickedWindowScroll(0, 1500);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+        clickedWindowScroll(0, 1500);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async createdFoxImg() {
+      try {
+        const res = await fetchFoxsInfo();
+
+        this.Img = res.data.image;
+        this.animalImgs.push(this.Img);
+
+        clickedWindowScroll(0, 1500);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
