@@ -30,7 +30,7 @@
 
 <br />
 
-### `📘추천하는 자바스크립트 목록📚`
+### `📘추천하는 자바스크립트 서적 목록📚`
 
 <img src="https://github.com/DragooCho/TIL/blob/main/image/image_024.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
 
