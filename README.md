@@ -32,13 +32,13 @@
 
 ### `📘추천하는 자바스크립트 서적 목록📚`
 
-<img src="https://github.com/DragooCho/TIL/blob/main/image/image_024.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/642c1c63-99bd-4eb0-9ba4-49cbff282122/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210831%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210831T034205Z&X-Amz-Expires=86400&X-Amz-Signature=5f90922a97c025fa8f19fbab5b298371de6903fa0c2b857d0ed5f6d7b59fb62b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
 
 - 카카오 API에서 응답 받은 데이터를 활용해 특정 키워드의 책을 소개하는 웹페이지입니다.
 
 <br />
 
-<img src="https://github.com/DragooCho/TIL/blob/main/image/image_026.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+<img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/50c75a79-dba1-4d47-a24a-5ca6fdb41b37/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210831%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210831T034403Z&X-Amz-Expires=86400&X-Amz-Signature=6dffddb563965012dcaddad19e60c9926d1b2f895f6ebc3a714a03e6c5a9c436&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" width="600px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
 
 - 웹반응형을 적용해 페이지 가로 폭이 700px이하로 줄어들면 모바일의 가독성에 맞게 변화됩니다.
 
