@@ -24,8 +24,8 @@
         <h4><a class="grayText">책소개</a></h4>
         <div class="contentsText">
           <p v-if="info.contents === ''">{{ noInfo }}</p>
-          <p v-else-if="info.contents.length > 200">
-            {{ info.contents.slice(0, 200) + "..." }}
+          <p v-else-if="info.contents.length > 150">
+            {{ ellipsisOfWords(info.contents, 150) }}
           </p>
           <p v-else>{{ info.contents }}</p>
         </div>
@@ -52,6 +52,7 @@
 import { noImage } from "../images/image_url.js";
 import { currentDate } from "../function_utilities/time_utilities";
 import { digitCommaNumber } from "../function_utilities/number_processing_utilities";
+import { ellipsisOfWords } from "../function_utilities/string_processing_utilities";
 
 export default {
   data() {
@@ -60,6 +61,7 @@ export default {
       no_sale_price: `${currentDate()} 현재 할인 예정이 없습니다.`,
       no_thumbnail_Image: `${noImage()}`,
       digitCommaNumber,
+      ellipsisOfWords,
     };
   },
   created() {

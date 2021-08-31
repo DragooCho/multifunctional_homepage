@@ -4,4 +4,9 @@ const urlParseEx = (img) => {
   return nameExValue;
 };
 
-export { urlParseEx };
+const ellipsisOfWords = (sentence, numberOfCharacters) => {
+  const words = sentence.slice(0, numberOfCharacters);
+  return `${words}...`;
+};
+
+export { urlParseEx, ellipsisOfWords };
