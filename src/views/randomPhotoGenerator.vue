@@ -38,28 +38,15 @@ import { urlParseEx } from "../function_utilities/string_processing_utilities";
 export default {
   data() {
     return {
-      Img: "test",
       animalImgs: [],
       dogVideos: [],
     };
   },
-  created() {
-    this.$store.dispatch("FETCH_CATS_INFO");
-  },
+  // created() {
+  //   this.$store.dispatch("FETCH_CATS_INFO");
+  // },
   mounted() {},
   methods: {
-    // createdCatImg() {
-    //   fetchCatsInfo()
-    //     .then((res) => {
-    //       this.Img = res.data.file;
-    //       this.animalImgs.push(this.Img);
-
-    //       clickedWindowScroll(0, 1500);
-    //     })
-    //     .catch((error) => {
-    //       console.log(error, "에러");
-    //     });
-    // },
     async createdCatImg() {
       try {
         const res = await fetchCatsInfo();
@@ -72,6 +59,18 @@ export default {
         console.log(error, "에러");
       }
     },
+    // async createdCatImg() {
+    //   try {
+    //     const res = await fetchCatsInfo();
+
+    //     this.Img = res.data.file;
+    //     this.animalImgs.push(this.Img);
+
+    //     clickedWindowScroll(0, 1500);
+    //   } catch (error) {
+    //     console.log(error, "에러");
+    //   }
+    // },
     async createdDogImg() {
       try {
         const res = await fetchDogsInfo();
