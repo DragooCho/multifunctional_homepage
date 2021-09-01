@@ -59,18 +59,6 @@ export default {
         console.log(error, "에러");
       }
     },
-    // async createdCatImg() {
-    //   try {
-    //     const res = await fetchCatsInfo();
-
-    //     this.Img = res.data.file;
-    //     this.animalImgs.push(this.Img);
-
-    //     clickedWindowScroll(0, 1500);
-    //   } catch (error) {
-    //     console.log(error, "에러");
-    //   }
-    // },
     async createdDogImg() {
       try {
         const res = await fetchDogsInfo();
