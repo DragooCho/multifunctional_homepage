@@ -112,6 +112,6 @@ export default {
   z-index: 0;
 }
 .image_test {
-  width: 300px;
+  width: 350px;
 }
 </style>
