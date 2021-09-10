@@ -32,13 +32,13 @@
 
 ### `📘추천하는 자바스크립트 서적 목록📚`
 
-<img src="https://github.com/DragooCho/TIL/blob/main/image/image_031.gif?raw=true" width="900px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_031.gif?raw=true" width="1200px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
 
 - 카카오 API에서 응답 받은 데이터를 활용해 특정 키워드의 책을 소개하는 웹페이지입니다.
 
 <br />
 
-<img src="https://github.com/DragooCho/TIL/blob/main/image/image_030.gif?raw=true" width="900px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_030.gif?raw=true" width="1200px"  title="px(픽셀) 크기 설정" alt="베스트셀러 목록"></img>
 
 - 웹반응형을 적용해 페이지 가로 폭이 700px이하로 줄어들면 모바일의 가독성에 맞게 변화됩니다.
 
@@ -46,7 +46,7 @@
 
 ### `🐶무작위동물사진생성기😸`
 
-<img src="https://github.com/DragooCho/TIL/blob/main/image/image_027.png?raw=true" width="600px"  title="px(픽셀) 크기 설정" alt="무작위동물사진"></img>
+<img src="https://github.com/DragooCho/TIL/blob/main/image/image_027.png?raw=true" width="900px"  title="px(픽셀) 크기 설정" alt="무작위동물사진"></img>
 
 - 보고싶은 동물의 버튼을 누르면 API에게 요청하고 이미지웹주소를 응답받아  
   이미지겍체에 대입되어 동물이미지가 브라우저에 출력되는 웹페이지입니다.
