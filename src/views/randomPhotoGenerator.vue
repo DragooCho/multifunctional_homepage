@@ -1,16 +1,20 @@
 <template>
   <div>
     <div class="button_container">
-      <button class="randomDog btnStyle" @click="createdDogImg">
-        개 사진 생성버튼
-      </button>
-      <button class="randomFox btnStyle" @click="createdFoxImg">
-        여우 사진 생성버튼
-      </button>
-      <button class="randomCat btnStyle" @click="createdCatImg">
-        고양이 사진 생성버튼
-      </button>
+      <div class="button_container">
+        <button class="randomDog btnStyle" @click="createdDogImg">
+          개 사진 생성버튼
+        </button>
+        <button class="randomFox btnStyle" @click="createdFoxImg">
+          여우 사진 생성버튼
+        </button>
+        <button class="randomCat btnStyle" @click="createdCatImg">
+          고양이 사진 생성버튼
+        </button>
+      </div>
     </div>
+    <!-- <AnimalButtons /> -->
+
     <img
       class="image_posted"
       v-for="Img in animalImgs"
@@ -34,6 +38,7 @@
 import { fetchCatsInfo, fetchDogsInfo, fetchFoxsInfo } from "../api/index.js";
 import { clickedWindowScroll } from "../function_utilities/window_scroll_event";
 import { urlParseEx } from "../function_utilities/string_processing_utilities";
+// import AnimalImgZone from "../components/AnimalImgZone.vue";
 
 export default {
   data() {
@@ -42,10 +47,12 @@ export default {
       dogVideos: [],
     };
   },
-  // created() {
-  //   this.$store.dispatch("FETCH_CATS_INFO");
-  // },
+
   mounted() {},
+  // components() {
+  //   AnimalImgZone;
+  // },
+
   methods: {
     async createdCatImg() {
       try {
